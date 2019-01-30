@@ -1,3 +1,4 @@
+# tested on debian 9.4 and 9.7
 FROM debian
 
 RUN apt-get update && \
@@ -18,10 +19,9 @@ RUN cd /usr/local/src/pjproject-2.5.5/ && \
 	checkinstall --pkgname pjsua-python
 
 RUN cd /usr/local/src/pjproject-2.5.5/pjsip-apps/src/python/ && \
-	apt-get install -y python3 python-minimal
+	apt-get install -y python-minimal
 
 RUN cd /usr/local/src/pjproject-2.5.5/pjsip-apps/src/python/ && \
 	python setup.py install
 
-RUN cd /usr/local/src/pjproject-2.5.5/pjsip-apps/src/python/ && \
-	python3 setup.py install
+
